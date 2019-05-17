@@ -1,0 +1,29 @@
+print:
+	nasm -f elf64 -o print.o print.s
+	ld -o print print.o
+
+loop:
+	nasm -f elf64 -o loop.o loop.s
+	ld -o loop loop.o
+
+hello:
+	gcc hello.c -o hello.o
+
+interfaces:
+	gcc -g interfaces.c -o interfaces.o
+	./interfaces.o
+
+send:
+	gcc -g send.c -o send.o
+	./send.o
+
+senddump: send
+	tcpdump -i eth0 -c 1 -w tcpdump.out.pcap &
+	sleep 0.5
+	./send.o
+
+clean:
+	rm -f print.o print
+	rm -f loop.o loop
+	rm -f hello.o
+	rm -f send.o
