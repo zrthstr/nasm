@@ -1,10 +1,5 @@
 ; echo_len
 
-; -----------------------------------------------------------------------------
-; A 64-bit program that displays its command line arguments, one per line.
-;
-; On entry, rdi will contain argc and rsi will contain argv.
-; -----------------------------------------------------------------------------
 global _start
 
 ;        extern  puts

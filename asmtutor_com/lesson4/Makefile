@@ -1,5 +1,5 @@
 
-THIS = echo
+THIS = echo_len
 
 $(THIS):
 	nasm -f elf64 -o $(THIS).o $(THIS).asm
