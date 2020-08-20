@@ -2,7 +2,7 @@
 
 %include 'functions.asm'
 
-SECTION text
+SECTION .text
 global _start
 
 _start:
@@ -12,7 +12,7 @@ nextNumber:
         inc     ecx
         mov     eax, ecx
 
-	add	eax, 48
+        add     eax, 48
         push    eax
         mov     eax, esp
         call    sprint_line
