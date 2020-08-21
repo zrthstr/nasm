@@ -7,7 +7,7 @@ $(THIS):
 	#nasm -f elf64 -o $@.o $@.asm
 	nasm -f elf -o $@.o $@.asm
 	ld -m elf_i386 -o $@ $@.o
-	./$@ first next last
+	./$@
 
 all: $@ clean
 

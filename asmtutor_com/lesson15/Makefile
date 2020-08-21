@@ -1,6 +1,6 @@
 CFLAGS = -Wall -Wextra -pedantic -O2
 
-THIS = multiply
+THIS = division
 .PHONY : all ccount $(THIS)
 
 $(THIS):
