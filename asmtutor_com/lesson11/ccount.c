@@ -18,22 +18,10 @@ int main(){
 		test = test / 10;
 	}
 
-	///////////////
-	// method #1 //
-	///////////////
-
 	for (int c=i; c>=0; c--){
 		write(1, &buff[c], 1);
 	}
 	write(1, &lf, 1);
-
-
-	///////////////
-	// method #2 //
-	///////////////
-
-	// tbd: reverse buff
-	write(1, &buff, i);
 
 	return 0;
 }

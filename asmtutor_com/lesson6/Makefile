@@ -1,5 +1,5 @@
 
-THIS = extinc
+THIS = null
 
 $(THIS):
 	#nasm -f elf64 -o $(THIS).o $(THIS).asm

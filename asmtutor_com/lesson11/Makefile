@@ -1,6 +1,7 @@
 CFLAGS = -Wall -Wextra -pedantic -O2
+
 THIS = count
-.PHONY : all ccount
+.PHONY : all ccount $(THIS)
 
 $(THIS):
 	#nasm -f elf64 -o $@.o $@.asm
