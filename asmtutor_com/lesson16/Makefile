@@ -1,6 +1,6 @@
 CFLAGS = -Wall -Wextra -pedantic -O2
 
-THIS = calculator catoi
+THIS = catoi
 .PHONY : all ccount $(THIS)
 
 $(THIS):
@@ -14,9 +14,9 @@ all: $@ clean
 
 catoi:
 	gcc $(CFLAGS) -o $@ $@.c
-	./catoi 111
+	./$@ 111
 	@echo ""
-	./catoi 100 200 345
+	./$@ 100 200 345
 
 clean:
 	rm -f $@
