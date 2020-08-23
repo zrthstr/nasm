@@ -20,7 +20,7 @@ c_ping_send:
 
 c_ping_receive:
 	gcc $(CFLAGS) -o $@ ping_receive.c
-	sudo ./$@
+	sudo ./$@ &
 
 nasm_ping:
 	################# nasm ping #########################

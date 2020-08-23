@@ -18,25 +18,16 @@ struct packet
 struct protoent *proto=NULL;
 
 
-/*--------------------------------------------------------------------*/
-/*--- display - present echo info                                  ---*/
-/*--------------------------------------------------------------------*/
 void display(void *buf, int bytes)
 {	int i;
-//	struct iphdr *ip = buf;
-//	struct icmphdr *icmp = buf+ip->ihl*4;
-
-	printf("----------------\n");
 	for ( i = 0; i < bytes; i++ )
 	{
 		if ( !(i & 15) ) printf("\n%02X:  ", i);
 		printf("%02X ", ((unsigned char*)buf)[i]);
 	}
+	printf("\n");
 }
 
-/*--------------------------------------------------------------------*/
-/*--- listener - separate process to listen for and collect messages--*/
-/*--------------------------------------------------------------------*/
 void listener(void)
 {	int sd;
 	struct sockaddr_in addr;
@@ -60,25 +51,14 @@ void listener(void)
 	exit(0);
 }
 
-
-/*--------------------------------------------------------------------*/
-/*--- main - look up host and start ping processes.                ---*/
-/*--------------------------------------------------------------------*/
 int main()
-{	//struct hostent *hname;
+{
 	struct sockaddr_in addr;
 
 	proto = getprotobyname("ICMP");
-	//hname = gethostbyname(strings[1]);
 	bzero(&addr, sizeof(addr));
-	//addr.sin_family = hname->h_addrtype;
 	addr.sin_port = 0;
-	//addr.sin_addr.s_addr = *(long*)hname->h_addr;
-	//if ( fork() == 0 )
-		listener();
-	//else
-	//	ping(&addr);
-	//wait(0);
+	listener();
 	return 0;
 }
 
